@@ -1,0 +1,29 @@
+﻿<Page x:Class="Cursach.Страницы.Edit.EmployPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cursach.Страницы.Edit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EmployPage">
+    <StackPanel Background="#FFF9F6F6">
+        <StackPanel DataContext="{Binding EditEmploy}">
+            <Label Content="Фамилия"/>
+            <TextBox Text="{Binding LastName1}" Cursor="Pen"/>
+            <Label Content="Имя"/>
+            <TextBox Text="{Binding FirstName}" Cursor="Pen"/>
+            <Label Content="Отчество"/>
+            <TextBox Text="{Binding Ochestvo}" Cursor="Pen"/>
+            <Label Content="Адресс"/>
+            <TextBox Text="{Binding Adress}" Cursor="Pen"/>
+           
+            
+        </StackPanel>
+        <Label Content="Должность"/>
+        <ComboBox ItemsSource="{Binding Posts}"
+                  SelectedItem="{Binding EmployPost}"
+                  DisplayMemberPath="Name" Cursor="Help"/>
+        <Button Content="Сохранить" Command="{Binding SaveEmploy}" Margin="348,0,283,0" Height="156" Cursor="Hand" FontSize="20" FontFamily="Segoe UI Black"/>
+    </StackPanel>
+</Page>
